@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Github Challenge</string>
+    <string name="repository_data_text">Repository name: %s\nTotal commits: %s\nAuthors: %s</string>
+    <string name="commits_text">%s commits</string>
+    <string name="last_update_text">Last update: %s</string>
+    <string name="open_issues_text">Open issues: %s</string>
+
+</resources>

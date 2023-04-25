@@ -1,0 +1,13 @@
+# Android Studio
+# IntelliJ
+*.iml
+.idea/*
+!.idea/codeStyles/*
+!.idea/vcs.xml
+
+.gradle
+build/
+/.idea/vcs.xml
+/local.properties
+/gradlew.bat
+/gradle/wrapper/gradle-wrapper.jar
