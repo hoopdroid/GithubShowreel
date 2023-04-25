@@ -4,8 +4,8 @@ This Android app connects to the Github API, fetches the public repositories of 
 
 <table>
   <tr>
-    <td
-      <img src="video.gif" alt="Demo Video" width="125" height="250" />
+    <td>
+      <img src="video.gif" alt="Demo Video" width="187" height="375" />
     </td>
   </tr>
 </table>
