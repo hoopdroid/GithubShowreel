@@ -2,7 +2,13 @@
 
 This Android app connects to the Github API, fetches the public repositories of a specified user, and retrieves their respective last commits. The project took a total of 4 hours to develop.
 
-![Demo Video](video.webm))
+<table>
+  <tr>
+    <td
+      <img src="video.gif" alt="Demo Video" width="125" height="250" />
+    </td>
+  </tr>
+</table>
 
 
 ## Table of Contents
