@@ -1,54 +1,55 @@
-Github Repositories Showreel
-4 hours total time spent
+# My Android Github Repositories Showreel
 
-The task:
-The aim of this test assignment is to build an App that connects to the Github API, shows the
-public repositories of a particular user and then retrieves their respective last commits
+This Android app connects to the Github API, fetches the public repositories of a specified user, and retrieves their respective last commits. The project took a total of 4 hours to develop.
 
-Implementation:
-You can find .apk file in the root folder
-
-The structure of the project:
-
--base
--domain
--data
--presentation
-
-Base
-Here is the package that includes .App class and utils package with util classes as well
-For DI I've selected Dagger Hilt, it's actually my first experience working with Hilt, I'm more 
-comfortable with Koin, but it was the strict amount of 3rd-party libraries. 
-So, all dependencies are providing by constructor (where it's possible), to separate interface contracts
-and implementations I used @Binds method approach
-
-Domain
-Includes Interactors for Repositories list and CommitHistory screens
-I think that in large applications with large team as well we need to have different data models for UI layer and Data layer as well. 
-It helps to test different layers, provides more flexible architecture as well
-That's why I created Mapper for RepositoryResponseItem to RepositoryVO class
-The main logic with timer of commits is implemented with RxJava Observable.interval
-Speaking about CommitsHistoryInteractor, I'm not fully satisfied about the mapping, 
-timer logic and implementation of months extraction in this class. 
-Due the time limitations I decided to proceed with current impl, but
-its definitely area of future improvement in terms of code complexity and reliability
-
-Data
-Includes DataSources with network call to commits history and user repositories. It's kind of a proxy
-layer to give more flexibility for possible unit testing
-
-Presentation
-Implementation of MVVM with with Fragment as a View and ViewModel as an entry point to getting the data from Interactor
-MVVM basically helps to separate the logic and use Fragment class just for a rendering.
-Also I created a sealed classes to handle to different states of screens. 
-Its the area of possible improvement to implement Loading proper and Error states in the app
-For the navigation I used NavController with safe argument passing (navigation-safe-args)
+![Demo Video]()
 
 
-If I had more time, I'd like to implement some unit tests for data and
-domain layers and also test that all possible ViewModel states were called in correct order,
-Also with more time I'd like to improve CommitsChartView as well. There is no attributes and styleables
-handling in the view, it means you can't control it via xml file, then the view is not production ready
+## Table of Contents
 
+- [Features](#features)
+- [Installation](#installation)
+- [Project Structure](#project-structure)
+- [Future Improvements](#future-improvements)
 
+## Features
 
+- Fetches public repositories of a specified user
+- Retrieves the last commits for each repository
+- Displays the repositories and commits in an organized manner
+
+## Installation
+
+Download the .apk file located in the root folder of the repository and install it on your Android device.
+
+## Project Structure
+
+The project is divided into four main packages:
+
+1. base: Contains the .App class and a utils package with utility classes. Dependency injection is achieved through Dagger Hilt.
+2. domain: Includes Interactors for the Repositories list and CommitHistory screens. A Mapper is used for mapping between RepositoryResponseItem and RepositoryVO classes.
+3. data: Contains DataSources with network calls to retrieve commits history and user repositories. It acts as a proxy layer for unit testing.
+4. presentation: Implements the MVVM architecture with Fragments as Views and ViewModels as the entry points to retrieve data from the Interactors.
+
+### Base
+
+This package includes the .App class and a utils package with utility classes. Dagger Hilt is used for dependency injection. Dependencies are provided by constructors, and the @Binds method approach is used to separate interface contracts and implementations.
+
+### Domain
+
+This package contains Interactors for the Repositories list and CommitHistory screens. It implements the separation of data models for UI and Data layers to facilitate testing and provide a more flexible architecture. The main logic with timer of commits is implemented using RxJava's Observable.interval. The current implementation of CommitsHistoryInteractor can be improved in terms of code complexity and reliability.
+
+### Data
+
+This package includes DataSources with network calls to commits history and user repositories. It acts as a proxy layer for unit testing.
+
+### Presentation
+
+The MVVM architecture is implemented with Fragments as Views and ViewModels as the entry points for retrieving data from Interactors. The app utilizes NavController for navigation with safe argument passing (navigation-safe-args). The current implementation can be improved by adding proper Loading and Error states.
+
+## Future Improvements
+
+- Add unit tests for data and domain layers
+- Test ViewModel states for correct order
+- Improve the implementation of CommitsChartView by adding attributes and styleables handling
+- Implement proper Loading and Error states in the app
